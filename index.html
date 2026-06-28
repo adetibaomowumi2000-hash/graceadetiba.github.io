@@ -632,73 +632,26 @@
     border: 1px solid var(--border);
     background: white;
     transition: box-shadow 0.25s, transform 0.25s;
-    cursor: pointer;
   }
 
   .portfolio-card:hover {
-    box-shadow: 0 16px 48px rgba(43,94,167,0.15);
+    box-shadow: 0 16px 48px rgba(43,94,167,0.12);
     transform: translateY(-4px);
   }
 
   .portfolio-thumb {
-    height: 200px;
-    position: relative;
-    overflow: hidden;
-    background: var(--blue-light);
-  }
-
-  .portfolio-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-
-  .portfolio-card:hover .portfolio-thumb img {
-    transform: scale(1.04);
-  }
-
-  .portfolio-thumb-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(43,94,167,0);
+    height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background 0.3s;
+    font-size: 3rem;
+    position: relative;
+    overflow: hidden;
   }
 
-  .portfolio-card:hover .portfolio-thumb-overlay {
-    background: rgba(43,94,167,0.55);
-  }
-
-  .overlay-icon {
-    color: white;
-    font-size: 2rem;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.3s, transform 0.3s;
-  }
-
-  .portfolio-card:hover .overlay-icon {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  .platform-badge {
-    position: absolute;
-    top: 10px; left: 10px;
-    background: white;
-    color: var(--blue);
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.25rem 0.65rem;
-    border-radius: 100px;
-    letter-spacing: 0.3px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  }
+  .portfolio-thumb-1 { background: linear-gradient(135deg, #EBF2FF, #C7D9F5); }
+  .portfolio-thumb-2 { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); }
+  .portfolio-thumb-3 { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); }
 
   .portfolio-body { padding: 1.4rem; }
 
@@ -713,92 +666,6 @@
     font-size: 0.85rem;
     color: var(--text-muted);
     line-height: 1.6;
-  }
-
-  /* ── LIGHTBOX ── */
-  .lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    background: rgba(0,0,0,0.88);
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
-  .lightbox.active { display: flex; }
-
-  .lightbox-inner {
-    position: relative;
-    max-width: 90vw;
-    max-height: 88vh;
-    background: white;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-  }
-
-  .lightbox-inner img {
-    display: block;
-    max-width: 90vw;
-    max-height: 80vh;
-    object-fit: contain;
-  }
-
-  .lightbox-caption {
-    padding: 0.8rem 1.2rem;
-    background: white;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    border-top: 1px solid var(--border);
-  }
-
-  .lightbox-close {
-    position: absolute;
-    top: 12px; right: 14px;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 32px; height: 32px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: background 0.2s;
-  }
-
-  .lightbox-close:hover { background: rgba(0,0,0,0.9); }
-
-  .lightbox-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.9);
-    border: none;
-    border-radius: 50%;
-    width: 40px; height: 40px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-    transition: background 0.2s;
-    z-index: 10;
-  }
-
-  .lightbox-nav:hover { background: white; }
-  .lightbox-prev { left: -52px; }
-  .lightbox-next { right: -52px; }
-
-  @media (max-width: 600px) {
-    .lightbox-prev { left: 8px; }
-    .lightbox-next { right: 8px; }
   }
 
   /* ── SKILLS ── */
@@ -974,4 +841,94 @@
 
   .contact-cta-box {
     background: rgba(43,94,167,0.15);
-    border: 1px solid rgba(
+    border: 1px solid rgba(43,94,167,0.3);
+    border-radius: 16px;
+    padding: 2.5rem;
+  }
+
+  .contact-cta-box h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.8rem;
+  }
+
+  .contact-cta-box p {
+    font-size: 0.9rem;
+    color: #9CA3AF;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #111827;
+    color: #6B7280;
+    text-align: center;
+    padding: 2rem 5%;
+    font-size: 0.82rem;
+  }
+
+  footer span { color: #6CA0DC; font-weight: 600; }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), #6CA0DC);
+    border-radius: 2px;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-visual { order: -1; }
+    .hero-card { max-width: 100%; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    nav { padding: 0 4%; }
+    .nav-links { display: none; }
+    section { padding: 60px 4%; }
+    .hero { padding: 90px 4% 60px; }
+    .hero-stats { gap: 1.2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .underline-anim::after, .hero-badge::before, .avail-dot { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Grace Adetiba</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Open to Remote Opportunities</div>
+      <h1>Hi, I'm <span class="underline-anim">Grace Adetiba</span></h1>
+      <div class="hero-headline">Customer Support Specialist | CRM | Virtual Support</div>
+      <p class="hero-intro">Helping businesses retain customers, organize CRM workflows, and deliver exceptional virtual support — remotely and reliably.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Contact Me</a>
+        <a href="#experience" class="btn-secondary">View Experience</a>
+        <a href="mailto:adetibaomowumi2000@gmail.com" class="btn-outline">Let's Work Together</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">4+</span>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="st
